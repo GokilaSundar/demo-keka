@@ -110,19 +110,20 @@ const tableItem = [
 const SearchField = () => {
   const [grid, setGrid] = useState(false);
   const [searchItem, setSearchItem] = useState("");
-  const [filter, setFilter] = useState([]);
+  const [filter, setFilter] = useState(tableItem);
   const handleSearch = (e) => {
     const searchName = e.target.value;
-    setSearchItem(searchName.toLowerCase());
+    setSearchItem(searchName);
+    console.log(searchItem);
     const filterItem = tableItem.filter((item) =>
-      item.name.toLowerCase().includes(searchName)
+      item.name.toLowerCase().includes(searchName.toLowerCase())
     );
+    console.log(filterItem);
     setFilter(filterItem);
   };
   const handlToggle = () => {
     setGrid(!grid);
   };
-
   return (
     <div>
       <div className="flex justify-between items-center gap-10">
@@ -159,13 +160,13 @@ const SearchField = () => {
           <span className="w-full font-medium">Grid View</span>
         </div>
       </div>
-      {grid ? (
+      {filter.length === 0 ? (
+        <div className="my-10 font-medium text-xl text-center">
+          No datas found {":("}
+        </div>
+      ) : grid ? (
         <div className="my-10">
-          {filter.length > 0 ? (
-            <EmployeeDetails gridItem={filter} />
-          ) : (
-            <EmployeeDetails gridItem={tableItem} />
-          )}
+          <EmployeeDetails gridItem={filter} />
         </div>
       ) : (
         <div className="my-10 rounded-lg border-2 border-[#E2EFF9] ">
@@ -182,33 +183,18 @@ const SearchField = () => {
                 ))}
               </tr>
             </thead>
-            {filter.length > 0 ? (
-              <tbody>
-                {filter.map((item, index) => (
-                  <tr key={index} className="">
-                    <td className="p-4 px-5">{item.id}</td>
-                    <td className="p-4 px-5">{item.name}</td>
-                    <td className="p-4 px-5">{item.designation}</td>
-                    <td className="p-4 px-5">{item.department}</td>
-                    <td className="p-4 px-5">{item.email}</td>
-                    <td className="p-4 px-5">{item.number}</td>
-                  </tr>
-                ))}
-              </tbody>
-            ) : (
-              <tbody>
-                {tableItem.map((item, index) => (
-                  <tr key={index} className="">
-                    <td className="p-4 px-5">{item.id}</td>
-                    <td className="p-4 px-5">{item.name}</td>
-                    <td className="p-4 px-5">{item.designation}</td>
-                    <td className="p-4 px-5">{item.department}</td>
-                    <td className="p-4 px-5">{item.email}</td>
-                    <td className="p-4 px-5">{item.number}</td>
-                  </tr>
-                ))}
-              </tbody>
-            )}
+            <tbody>
+              {filter.map((item, index) => (
+                <tr key={index} className="">
+                  <td className="p-4 px-5">{item.id}</td>
+                  <td className="p-4 px-5">{item.name}</td>
+                  <td className="p-4 px-5">{item.designation}</td>
+                  <td className="p-4 px-5">{item.department}</td>
+                  <td className="p-4 px-5">{item.email}</td>
+                  <td className="p-4 px-5">{item.number}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
       )}

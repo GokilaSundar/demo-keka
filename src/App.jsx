@@ -5,43 +5,27 @@ import CurrentDetails from "./component/CurrentDetails";
 import SearchField from "./component/SearchField";
 import team from "../src/assets/ri_team-fill (1).svg";
 import group from "../src/assets/Group.svg";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Dashboard from "../src/pages/Dashboard";
+import Feeds from "../src/pages/Feeds";
+import MyDetails from "../src/pages/MyDetails";
+import MyTeamDetails from "../src/pages/MyTeamDetails";
+import OrganisationDetails from "../src/pages/OrganisationDetails";
 function App() {
   return (
-    <div className="m-10">
-      <NavItem />
-      <div className="flex justify-between gap-6">
-        <CurrentDetails
-          title="Total Team Members"
-          quantity={10}
-          bg="#FAECEB"
-          className="bg-[#FAECEB] border-[#FAECEB]"
-          icon="T"
-          iconColor="bg-[#FEA9AC] border-[#FEA9AC]"
-          img={team}
-        />
-        <CurrentDetails
-          title="On Leave Today"
-          quantity={3}
-          bg="#FAECEB"
-          className="bg-[#FCF4E9] border-[#FCF4E9]"
-          icon="L"
-          iconColor="bg-[#FFD59C] border-[#FFD59C]"
-          img={group}
-        />
-        <CurrentDetails
-          title="On Work From Home"
-          quantity={5}
-          bg="#FAECEB"
-          className="bg-[#E2E9F3] border-[#E2E9F3]"
-          icon="W"
-          iconColor="bg-[#BFCFD7] border-[#BFCFD7]"
-          img={team}
-        />
+    <BrowserRouter>
+      <div className="m-10">
+        <NavItem />
       </div>
-      <div>
-        <SearchField />
-      </div>
-    </div>
+      <Routes>
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/feeds" element={<Feeds />} />
+        <Route path="/my-details" element={<MyDetails />} />
+        <Route path="/my-team-details" element={<MyTeamDetails />} />
+        <Route path="/organisation-details" element={<OrganisationDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
