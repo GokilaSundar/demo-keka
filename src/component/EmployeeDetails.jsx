@@ -4,7 +4,7 @@ import profile from "../assets/profile.png";
 const EmployeeDetails = ({ gridItem }) => {
   return (
     <div>
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid md:grid-cols-3 gap-10">
         {gridItem.map((item, index) => (
           <div
             key={index}

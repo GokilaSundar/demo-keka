@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import NavItem from "./component/NavItem";
 import CurrentDetails from "./component/CurrentDetails";
-import SearchField from "./component/SearchField";
 import team from "../src/assets/ri_team-fill (1).svg";
 import group from "../src/assets/Group.svg";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";

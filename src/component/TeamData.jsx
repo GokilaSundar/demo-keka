@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import EmployeeDetails from "./EmployeeDetails";
-import search from "../assets/icons8-search.svg";
 import call from "../assets/ic_sharp-call.svg";
 import location from "../assets/location 1.svg";
 import list from "../assets/list 1.svg";
 import mail from "../assets/mail 1.svg";
 import building from "../assets/building 1.svg";
+import SearchField from "../common/SearchField";
 const tableTitle = [
   "Employee ID",
   "Employee Name",
@@ -20,7 +20,7 @@ const tableItem = [
     id: 1,
     name: "Prabakaran",
     designation: "Designer",
-    department: "Quantum Pulse Technology",
+    department: "Quantum Technology",
     collage: "Sri Eshwar collage of Engineering",
     email: "abc@gmail.com",
     number: 9090676898,
@@ -35,7 +35,7 @@ const tableItem = [
     id: 2,
     name: "Surya Chandran",
     designation: "Designer",
-    department: "Quantum Pulse Technology",
+    department: "QA Pulse Tech",
     collage: "Sri Eshwar collage of Engineering",
     email: "abc@gmail.com",
     number: 9090676898,
@@ -50,7 +50,7 @@ const tableItem = [
     id: 3,
     name: "Lavanya",
     designation: "Designer",
-    department: "Quantum Pulse Technology",
+    department: "Pulse Technology",
     collage: "Sri Eshwar collage of Engineering",
     email: "abc@gmail.com",
     number: 9090676898,
@@ -65,7 +65,7 @@ const tableItem = [
     id: 4,
     name: "Suganya",
     designation: "Designer",
-    department: "Quantum Pulse Technology",
+    department: "Frenzo Pvt Ltd",
     collage: "Sri Eshwar collage of Engineering",
     email: "abc@gmail.com",
     number: 9090676898,
@@ -95,7 +95,7 @@ const tableItem = [
     id: 4,
     name: "Suganya",
     designation: "Developer",
-    department: "Quantum Pulse Technology",
+    department: "Kovaion Technology",
     collage: "Sri Eshwar collage of Engineering",
     email: "abc@gmail.com",
     number: 9090676880,
@@ -107,7 +107,7 @@ const tableItem = [
     action: "",
   },
 ];
-const SearchField = () => {
+const TeamData = () => {
   const [grid, setGrid] = useState(false);
   const [searchItem, setSearchItem] = useState("");
   const [filter, setFilter] = useState(tableItem);
@@ -128,21 +128,15 @@ const SearchField = () => {
     <div>
       <div className="flex justify-between items-center gap-10">
         <div className="w-full  relative">
-          <input
-            type="text"
-            name=""
-            value={searchItem}
-            onChange={handleSearch}
-            id="searchField"
+          <SearchField
+            searchItem={searchItem}
+            handleSearch={handleSearch}
             placeholder="Search employee..."
-            className="w-full border-2 border-[#D9D9D9] rounded-md py-2 px-9 "
-          />
-          <img
-            src={search}
-            alt="search"
-            className="w-6 absolute top-3 left-2"
+            className="w-full border-2 border-[#D9D9D9] rounded-md py-2 px-9"
+            imgStyle="w-6 absolute top-3 left-2"
           />
         </div>
+
         <div className="flex gap-4">
           <button
             className={`w-24 h-6 
@@ -169,7 +163,7 @@ const SearchField = () => {
           <EmployeeDetails gridItem={filter} />
         </div>
       ) : (
-        <div className="my-10 rounded-lg border-2 border-[#E2EFF9] ">
+        <div className="my-10 rounded-lg border-2 border-[#E2EFF9] overflow-x-scroll">
           <table className="w-full ">
             <thead>
               <tr>
@@ -202,4 +196,4 @@ const SearchField = () => {
   );
 };
 
-export default SearchField;
+export default TeamData;

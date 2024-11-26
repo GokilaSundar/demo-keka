@@ -10,10 +10,10 @@ const CurrentDetails = ({
 }) => {
   return (
     <div
-      className={`border-2 flex gap-5 rounded-md py-7 px-5 w-full text-lg my-7 ${className}`}
+      className={`border-2 flex gap-5 rounded-md py-7 px-5 sm:w-full md:w-full lg:w-80 text-lg my-7 ${className} `}
     >
       <div
-        className={`border-2 rounded-full flex justify-center w-14 items-center ${iconColor}`}
+        className={`border-2 rounded-full flex justify-center w-14 h-14 items-center ${iconColor}`}
       >
         <img src={img} alt="" />
       </div>
