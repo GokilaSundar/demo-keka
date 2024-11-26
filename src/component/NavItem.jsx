@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import dashboard from "../assets/bxs_dashboard.svg";
 import list from "../assets/list 1.svg";
-import vector from "../assets/Vector.svg";
+import profile from "../assets/profile.svg";
 import team from "../assets/ri_team.svg";
 import building from "../assets/building 1.svg";
 import { NavLink } from "react-router-dom";
 const navItem = [
   { title: "DashBoard", img: dashboard, path: "/dashboard" },
   { title: "Feeds", img: list, path: "/feeds" },
-  { title: "My Details", img: vector, path: "/my-details" },
+  { title: "My Details", img: profile, path: "/my-details" },
   { title: "My Team Details", img: team, path: "/my-team-details" },
   {
     title: "Organisation Details",
