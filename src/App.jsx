@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import NavItem from "./component/NavItem";
+import Navbar from "./component/Navbar";
 import CurrentDetails from "./component/CurrentDetails";
 import team from "../src/assets/ri_team-fill (1).svg";
 import group from "../src/assets/Group.svg";
@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="m-10">
-        <NavItem />
+        <Navbar />
       </div>
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
