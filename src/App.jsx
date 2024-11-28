@@ -4,7 +4,13 @@ import Navbar from "./component/Navbar";
 import CurrentDetails from "./component/CurrentDetails";
 import team from "../src/assets/ri_team-fill (1).svg";
 import group from "../src/assets/Group.svg";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  HashRouter,
+  Routes,
+  Route,
+  N,
+  HashRouteravigate,
+} from "react-router-dom";
 import Dashboard from "../src/pages/Dashboard";
 import Feeds from "../src/pages/Feeds";
 import MyDetails from "../src/pages/MyDetails";
@@ -12,7 +18,7 @@ import MyTeamDetails from "../src/pages/MyTeamDetails";
 import OrganisationDetails from "../src/pages/OrganisationDetails";
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="m-10">
         <Navbar />
       </div>
@@ -30,7 +36,7 @@ function App() {
           element={<OrganisationDetails />}
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
