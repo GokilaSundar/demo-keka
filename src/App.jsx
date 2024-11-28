@@ -17,12 +17,18 @@ function App() {
         <Navbar />
       </div>
       <Routes>
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/feeds" element={<Feeds />} />
-        <Route path="/my-details" element={<MyDetails />} />
-        <Route path="/my-team-details" element={<MyTeamDetails />} />
-        <Route path="/organisation-details" element={<OrganisationDetails />} />
+        <Route
+          path="/demo-keka/"
+          element={<Navigate to="/demo-keka/dashboard" replace />}
+        />
+        <Route path="/demo-keka/dashboard" element={<Dashboard />} />
+        <Route path="/demo-keka/feeds" element={<Feeds />} />
+        <Route path="/demo-keka/my-details" element={<MyDetails />} />
+        <Route path="/demo-keka/my-team-details" element={<MyTeamDetails />} />
+        <Route
+          path="/demo-keka/organisation-details"
+          element={<OrganisationDetails />}
+        />
       </Routes>
     </BrowserRouter>
   );
