@@ -169,7 +169,7 @@ const TeamData = () => {
               <tr>
                 {tableTitle.map((item, index) => (
                   <th
-                    className="border-b-2 text-left py-5 px-5 font-medium bg-[#E2EFF9] border-[#E2EFF9]"
+                    className="text-nowrap border-b-2 text-left py-5 px-5 font-medium bg-[#E2EFF9] border-[#E2EFF9]"
                     key={index}
                   >
                     {item}

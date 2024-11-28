@@ -17,7 +17,7 @@ const CurrentDetails = ({
       >
         <img src={img} alt="" />
       </div>
-      <div>
+      <div className="text-nowrap">
         <h2>{title}</h2>
         <h3>{quantity}</h3>
       </div>

@@ -27,7 +27,7 @@ const Navbar = () => {
   const [sideNavbar, setSideNavbar] = useState(false);
   console.log(sideNavbar);
   return (
-    <div className="flex justify-between ">
+    <div className="flex gap-5 justify-between ">
       <div className="py-3 px-10 text-xl  bg-[#F5FAFD] border-2 border-[#F5FAFD] rounded-2xl">
         Logo
       </div>
@@ -37,7 +37,7 @@ const Navbar = () => {
             <NavLink
               to={item.path}
               // onClick={() => setActive(item.path)}
-              className={`flex gap-1 ${
+              className={`flex gap-1 text-nowrap ${
                 currentPath === item.path ? "text-blue-700 " : "text-black"
               }`}
             >
@@ -49,7 +49,7 @@ const Navbar = () => {
         ))}
       </ul>
       <button
-        className="relative block sm:block md:block lg:hidden "
+        className="relative block sm:block md:block lg:hidden z-50"
         onClick={() => setSideNavbar(!sideNavbar)}
       >
         <img
@@ -59,7 +59,7 @@ const Navbar = () => {
         />
       </button>
       {sideNavbar && (
-        <div className=" absolute sm:block md:block lg:hidden top-[100px] right-[40px]  sm:w-[600px]  h-[500px] z-50">
+        <div className="absolute sm:block md:block lg:hidden top-[40px] right-[30px]  sm:w-[550px] w-[400px] h-[500px]">
           {" "}
           <ResponsiveNav navItem={navItem} setSideNavbar={setSideNavbar} />
         </div>
