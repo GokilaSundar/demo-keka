@@ -23,6 +23,7 @@ function App() {
         <Route path="/my-details" element={<MyDetails />} />
         <Route path="/my-team-details" element={<MyTeamDetails />} />
         <Route path="/organisation-details" element={<OrganisationDetails />} />
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </BrowserRouter>
   );
