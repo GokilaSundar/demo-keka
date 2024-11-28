@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://GokilaSundar.github.io/demo-keka",
+  "homepage": "https://GokilaSundar.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
